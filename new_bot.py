@@ -178,4 +178,25 @@ async def anime(ctx, *, nombre_anime):
     else:
         await ctx.send("❌ No encontré ningún anime con ese nombre.")
 
+@bot.command()
+async def cuantotemp(ctx, *, objeto: str):
+    
+    objetos = {
+        "botellas de vidrio": "4000 años",
+        "botellas de plástico": "entre 100 y 1000 años",
+        "bolsas de plástico": "entre 10 y 1000 años",
+        "latas de aluminio": "10 años",
+        "pilas": "entre 500 y 1000 años"
+    }
+    
+    objeto = objeto.lower()
+    
+    if objeto in objetos:
+        await ctx.send(f"El tiempo que tarda en degradarse una {objeto} es {objetos[objeto]}.")
+    else:
+        await ctx.send(f"Lo siento, no tengo el tiempo que tarda en degradarse '{objeto}'.")
+
+        
+    
 bot.run("")
+
